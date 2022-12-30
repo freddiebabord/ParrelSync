@@ -14,6 +14,7 @@ namespace ParrelSync
         public string packagesPath;
         public string autoBuildPath;
         public string localPackages;
+        public string fmod;
 
         char[] separator = new char[1] { '/' };
 
@@ -54,7 +55,7 @@ namespace ParrelSync
             newProject.packagesPath = packagesPath;
             newProject.autoBuildPath = autoBuildPath;
             newProject.localPackages = localPackages;
-
+            newProject.fmod = fmod;
 
             return newProject;
         }
@@ -85,7 +86,8 @@ namespace ParrelSync
                                  packagesPath + "\n" +
                                  autoBuildPath + "\n" +
                                  localPackages + "\n" +
-                                 libraryPath;
+                                 libraryPath + "\n" +
+                                 fmod;
             return (printString);
         }
 
@@ -105,8 +107,9 @@ namespace ParrelSync
             projectSettingsPath = projectPath + "/ProjectSettings";
             libraryPath = projectPath + "/Library";
             packagesPath = projectPath + "/Packages";
-            autoBuildPath = projectPath + "/AutoBuild";
+            autoBuildPath = projectPath + "/Builds";
             localPackages = projectPath + "/LocalPackages";
+            localPackages = projectPath + "/FMOD_Build";
         }
     }
 }
