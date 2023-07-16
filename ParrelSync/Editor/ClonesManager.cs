@@ -144,7 +144,7 @@ namespace ParrelSync
         /// Opens a project located at the given path (if one exists).
         /// </summary>
         /// <param name="projectPath"></param>
-        public static void OpenProject(string projectPath)
+        public static Process OpenProject(string projectPath)
         {
             if (!Directory.Exists(projectPath))
             {
@@ -161,7 +161,7 @@ namespace ParrelSync
             string fileName = GetApplicationPath();
             string args = "-projectPath \"" + projectPath + "\"";
             Debug.Log("Opening project \"" + fileName + " " + args + "\"");
-            ClonesManager.StartHiddenConsoleProcess(fileName, args);
+            return ClonesManager.StartHiddenConsoleProcess(fileName, args);
         }
 
         public static string GetApplicationPath()
@@ -618,9 +618,9 @@ namespace ParrelSync
         /// </summary>
         /// <param name="fileName"></param>
         /// <param name="args"></param>
-        private static void StartHiddenConsoleProcess(string fileName, string args)
+        private static Process StartHiddenConsoleProcess(string fileName, string args)
         {
-            System.Diagnostics.Process.Start(fileName, args);
+            return System.Diagnostics.Process.Start(fileName, args);
         }
 
         /// <summary>
