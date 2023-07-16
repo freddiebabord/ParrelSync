@@ -149,13 +149,13 @@ namespace ParrelSync
             if (!Directory.Exists(projectPath))
             {
                 Debug.LogError("Cannot open the project - provided folder (" + projectPath + ") does not exist.");
-                return;
+                return null;
             }
 
             if (projectPath == ClonesManager.GetCurrentProjectPath())
             {
                 Debug.LogError("Cannot open the project - it is already open.");
-                return;
+                return null;
             }
 
             string fileName = GetApplicationPath();
