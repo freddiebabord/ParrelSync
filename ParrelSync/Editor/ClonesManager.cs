@@ -164,7 +164,7 @@ namespace ParrelSync
             ClonesManager.StartHiddenConsoleProcess(fileName, args);
         }
 
-        private static string GetApplicationPath()
+        public static string GetApplicationPath()
         {
             switch (Application.platform)
             {
